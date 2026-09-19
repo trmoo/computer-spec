@@ -1,0 +1,20 @@
+{
+  "name": "computer-spec",
+  "version": "1.0.0",
+  "description": "나에게 쏙 맞는 노트북 고르기 — 노트북 사양을 읽고 목적에 맞게 고르는 정보 수업 실습 앱",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node test/run.mjs",
+    "check:syntax": "node tools/check-syntax.mjs"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}
