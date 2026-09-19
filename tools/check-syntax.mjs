@@ -77,6 +77,16 @@ for (const 길 of 소스들) {
     if (/\bdocument\.|\bwindow\./.test(글)) 잘못.push(`${이름} — 자료·계산 파일에서 DOM 을 건드렸다`);
   }
 
+  // ⑦-2 replaceChildren·append 에 null 을 넘기면 화면에 「null」 글자가 찍힌다(두 번 겪었다).
+  //   h() 는 null 을 걸러 주지만 DOM 의 replaceChildren·append 는 걸러 주지 않는다.
+  if (이름.startsWith('src/')) {
+    for (const 줄 of 글.split(/\r?\n/)) {
+      if (/(replaceChildren|\.append)\(/.test(줄) && /:\s*null\b|,\s*null\s*[,)]/.test(줄) && !줄.includes('filter(Boolean)')) {
+        잘못.push(`${이름} — replaceChildren/append 에 null 을 넘긴다: ${줄.trim().slice(0, 80)}  (.filter(Boolean) 로 걸러 낼 것)`);
+      }
+    }
+  }
+
   // ⑧ 이 앱은 학번·이름을 저장하지 않는다 — 기록소에 넣는 코드가 생기면 막는다.
   if (이름.startsWith('src/') && /자료적기\(\s*['"](?:학번|이름|name|studentId)/.test(글)) {
     잘못.push(`${이름} — 학번·이름을 기록소에 저장하려 한다. 활동지 파일에만 넣을 것`);

@@ -101,7 +101,8 @@ function 문항카드(활동key, 문항, 순번, { 모양, 그림, 바뀜 }) {
     }
     if (끝 && 문항.해설) 되먹임.push(h('div', { class: 'fb explain', html: md(문항.해설) }));
 
-    카드.replaceChildren(머리, 그림 ? 그림(문항) : null, 답칸, h('div', { class: 'fb-area' }, 되먹임));
+    // ⚠ replaceChildren 은 null 을 「null」 글자로 넣는다. 그림이 없을 때는 아예 빼고 넘긴다.
+    카드.replaceChildren(...[머리, 그림 && 그림(문항), 답칸, h('div', { class: 'fb-area' }, 되먹임)].filter(Boolean));
   };
 
   const 제출 = (값) => {

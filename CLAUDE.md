@@ -33,7 +33,8 @@
 - 활동지에 학생 글을 넣을 때는 반드시 `이스케이프` (시험이 `<script>` 로 확인).
 - 조사를 `은(는)` 처럼 늘어놓지 말 것 → `lib/josa.js` (`check:syntax` ⑥). 숫자·영문은 읽는 소리로(4100M→엠→은).
 - 탭 파일에서 setInterval·resize·requestAnimationFrame 직접 금지 → `ui.js` 의 화면타이머·창크기바뀔때·화면애니.
-- `replaceChildren(null)` 은 「null」 글자를 넣는다 — 빈 자리는 `.filter(Boolean)` (실제로 겪었다).
+- `replaceChildren(null)`·`append(null)` 은 「null」 글자를 넣는다 — 빈 자리는 `.filter(Boolean)`.
+  **두 번 겪었다**(내 활동지 맨 위, 그리고 2026-09-19 모든 확인 문제 카드 — `quiz.js` 의 그림 자리). `check:syntax` ⑦-2 가 이제 막는다.
 - 가상 노트북 사양을 고치면 **평점도 함께** — `test/data.test.mjs` 가 가격·무게 평점 순서, 인물 문제의 정답 유일성을 검사한다.
   p4(도현)는 「배터리만 보면 ARM(E)이 낫지만 x86 전용 프로그램 때문에 A」라는 함정이 살아 있어야 한다.
 - CPU 코어·스레드는 `대표CPU` 표와 `코어스레드()` 셈이 일치해야 한다(AMD Zen 5c 는 작은 코어도 2스레드 → `작은코어2`).
