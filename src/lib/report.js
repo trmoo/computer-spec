@@ -1,4 +1,4 @@
-/*! 나에게 쏙 맞는 노트북 고르기 — © 2026 티쳐무 · 모든 권리 보유
+/*! 개인 맞춤형 노트북 고르기 — © 2026 티쳐무 · 모든 권리 보유
  *  「내 활동지」 HTML 파일 만들기.
  *
  *  학생의 기록을 받아 **HTML 글 한 덩어리**를 돌려준다. 이 글을 파일로 내려받으면
@@ -131,7 +131,7 @@ export function 활동지HTML(기록, { 학번 = '', 이름 = '', 날짜 = new D
   }).join('\n');
 
   return `<!doctype html>
-<!-- 나에게 쏙 맞는 노트북 고르기 — 활동지 · © 2026 티쳐무 · 모든 권리 보유 -->
+<!-- 개인 맞춤형 노트북 고르기 — 활동지 · © 2026 티쳐무 · 모든 권리 보유 -->
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${이스케이프(파일이름(학번, 이름).replace(/\.html$/, ''))}</title>
 <style>
@@ -168,7 +168,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:10px;color:v
 @media print{body{background:#fff}.page{padding:0}section{break-inside:auto}h2,h3{break-after:avoid}tr{break-inside:avoid}}
 </style></head><body><div class="page">
 <header>
-<h1>💻 나에게 쏙 맞는 노트북 고르기 — 활동지</h1>
+<h1>💻 개인 맞춤형 노트북 고르기 — 활동지</h1>
 <div class="sub">정보 · Ⅰ. 컴퓨팅 시스템 — 문제 해결에 적합한 하드웨어를 선택하여 컴퓨팅 장치를 구성한다</div>
 <div class="who"><span>학번 <b>${이스케이프(학번) || '&nbsp;'}</b></span><span>이름 <b>${이스케이프(이름) || '&nbsp;'}</b></span><span>내려받은 때 <b>${날}</b></span></div>
 </header>
@@ -179,7 +179,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:10px;color:v
 <ul class="toc">${목차}</ul>
 ${칸들}
 <footer>
-이 활동지는 「나에게 쏙 맞는 노트북 고르기」 앱에서 만들었습니다. 종합 미션의 노트북 이름·가격은 수업용으로 지어낸 것입니다.<br>
+이 활동지는 「개인 맞춤형 노트북 고르기」 앱에서 만들었습니다. 종합 미션의 노트북 이름·가격은 수업용으로 지어낸 것입니다.<br>
 © 2026 티쳐무 · 모든 권리 보유 · 학교 수업 목적으로만 이용해 주세요.
 </footer>
 </div></body></html>`;
